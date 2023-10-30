@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    window.onload = function() {
+      // html 태그의 id 가 동일하게 지정되었습니다.
+      // html 자체에서는 문제가 없지만. js 에서 식별할 수 없어요..
+      // var a1 = document.querySelector('#a1')
+      // a1.onclick = function() {
+      //   a1.style.color = 'red';
+      // }
+
+      //둘다 적용이 되죠..
+      // 나중에 나오는 이야기입니다.
+      //querySelector 은 하나밖에 선택을 안해서..
+      //querySelectorAll 은 여러개 선택되고요..
+      //그래서 원하시는 대로 테스트 할려면 할수는 있는데..
+      //id 를 동일하게 지정하는 것이 좋아 보이지는 않고요..
+      var a2 = document.querySelectorAll('#a1')
+      a2.forEach(element => 
+        element.onclick = function() {
+          element.style.color = 'red'
+        }
+      )
+    }
+    var a = 10
+  </script>
+  <script>
+    var b = a + 10
+  </script>
+</head>
+<body>
+  <script>
+    var c = b + 30;
+    console.log(c)
+  </script>
+
+  <h1 id="a1">Hello</h1>
+  <h1 id="a1">world</h1>
+</body>
+</html>
