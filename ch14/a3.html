@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 알고리즘 실수... -->
+    <script>
+      var no = prompt('2 이상의 숫자를 입력하세요');
+      var message = '';
+      var num_arr = [1];
+
+      if (no != null) {
+        if (no > 1) {
+          for (i = 3; i <= no; i++) {
+            for (j = 2; j < i; j++) {
+              if (i % j === 0) {
+                break;
+              } else {
+                // 여기 잘못.. 위치..
+                num_arr.push(i);
+              }
+            }
+          }
+        } else {
+          message = '2 이상의 숫자를 입력해야해..';
+        }
+      } else {
+        message = '메세지를 입력하지 않았어..';
+      }
+      document.write(message + '</br>');
+      document.write(num_arr);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 코드 오류.. -->
+  <script>
+    var no = prompt('2 이상의 숫자를 입력하세요')
+    var message=''
+    if(no !== null){
+      if(no > 1){
+        var dv = 2
+        while(dv < no){
+//  사용자가 기입한 숫자 아래의 소수가 나오게 하는 법을 모르겠습니다ㅠ
+          if(no % dv === 0){        
+              dv++
+              message = 
+          }         
+        }
+// 사용자가 기입한 숫자 아래의 소수가 나오게 하는 법을 모르겠습니다ㅠ
+      }else {
+        message = '2 이상의 숫자를 입력해야합니다.'
+      }
+    }else {
+      message = '입력하지 않았습니다.'
+    }
+    document.write(message)
+  </script>
+</body>
+</html>
