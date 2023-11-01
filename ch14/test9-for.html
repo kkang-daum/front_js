@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    //유저에게 숫자를 입력받고.. 1부터 그 숫자까지 더해서 결과를 양산한다..
+    var no = prompt('1이상의 숫자를 입력하세요')
+
+    if(no !== null){
+      if(no>0){
+        var sum = 0
+        for(var i = 1; i<=no ; i++){
+          sum += i
+        }
+        document.write('1부터 '+no+'까지 더한 값은 : '+sum)
+      }else {
+        document.write('1 이상의 숫자를 입력해야 합니다.')
+      }
+    }else {
+      document.write('입력되지 않았습니다.')
+    }
+  </script>
+</body>
+</html>
