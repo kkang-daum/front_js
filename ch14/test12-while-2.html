@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      display: inline-block;
+      padding: 0 20px 30px 20px;
+      margin: 15px;
+      border: 1px solid #ccc;
+      line-height: 2;
+    }
+    div h3 {
+      text-align: center;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <script>
+    var dan = 1
+    var no = 1
+
+    //dan 의 loop
+    while(dan<=9){
+      document.write('<div>')
+      document.write('<h3>'+dan+'단</h3>')
+      //곱하는 loop
+      while(no<=9){
+        document.write(dan+'X'+no+'='+(dan*no)+'<br/>')
+        no++
+      }
+      document.write('</div>')
+      dan++
+      no = 1
+    }
+
+    
+  </script>
+</body>
+</html>
