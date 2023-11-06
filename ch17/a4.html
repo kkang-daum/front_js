@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="firstNum" />
+    <select name="select" id="selectNode">
+      <option value="0">+</option>
+      <option value="1">-</option>
+      <option value="2">*</option>
+      <option value="3">/</option>
+    </select>
+    <input type="text" id="secondNum" />
+    <button onclick="calc()">계산</button>
+    <script>
+      let firstNum = parseInt(document.getElementById('firstNum').value);
+      let secondNum = parseInt(document.getElementById('secondNum').value);
+      // select 태그는 input 태그가 아니다.. 아래처럼 값 획득하는 것이 아니다...
+      let selectValue = document.getElementById('selectNode').option.value;
+
+      //버튼 클릭시 이벤트 함수임으로 호출은 되겠지만.. 위의 코드는 버튼 클릭시 실행되지
+      //않는다.. 값을 어떻게 얻겠다는 것인가?
+      function calc() {
+        var result = 0;
+        if (selectValue == 0) {
+          result = firstNum + secondNum;
+          document.write(result);
+        } else if (selectValue == 1) {
+          result = firstNum - secondNum;
+          document.write(result);
+        } else if (selectValue == 2) {
+          result = firstNum * secondNum;
+          document.write(result);
+        } else {
+          result = firstNum / secondNum;
+          document.write(result);
+        }
+      }
+    </script>
+  </body>
+</html>

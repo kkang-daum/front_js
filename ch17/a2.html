@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h2>간단한 사칙연산을 하는 계산기를 작성하세요</h2>
+  <h3>문자열을 숫자로 변형하는 함수 parselnt()</h3>
+  <!-- let no1 = pareseInt(document.getElementById('no1').value); -->
+  <h3>select태그의 선택된 option 값을 획득</h3>
+  <!-- let selectValue = selectNode.options[selectNode.selectedIndex].value -->
+  <!-- 유저가 입력(input) - js가 뽑아냄(문자열string) - 숫자로 변경 -->
+
+  <div id="num1">
+    <input type="number" id="num1" autofocus />
+
+    </ul>
+
+    <input type="button" id="plus" value="+" onclick="add()"/>
+    <input type="button" id="m" value="-" onclick="sub()"/>
+    <input type="button" id="t" value="*" onclick="mul" />
+    <input type="button" id="d" value="/" onclick="div" />
+
+
+    <input type="number" id="num2" autofocus />
+
+    </ul>
+  </div>
+
+
+
+  <!-- 이벤트를 걸었지만.. 이벤트 함수가 없다. -->
+  <button onclick="register()">계산</button>
+  <script>
+    function register() {
+  //num1 id 가 중복선언되어 있어서.. div 태그를 지칭한다..
+  let no1 = pareseInt(document.getElementById('num1').value)
+    let no2 = pareseInt(document.getElementById('num2').value)  
+    }
+    
+
+  </script>
+</body>
+
+</html>

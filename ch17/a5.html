@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input id="no1"/>
+  <select id="a1">
+    <option value="p">+</option>
+    <option value="m">-</option>
+    <option value="pp">x</option>
+    <option value="mm">%</option>
+  </select>
+  <input id="no2">
+  <button id="enter">계산</button>
+
+
+<!-- 버튼 클릭시 이벤트 부터 걸어야 한다..  -->
+  <script>
+    let no1 = parseInt(document.getElementById("no1").value)
+    let no2 = parseInt(document.getElementById("no2").value)
+    let selectNode = document.getElementById('a1')
+    // let p = document.get
+    let selectValue = selectNode.option[selectNode.selectedIndext].value;
+
+    function enter(){
+      document.onclick = '#enter'
+      
+    }
+  </script>
+</body>
+</html>
