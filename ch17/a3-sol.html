@@ -23,8 +23,15 @@
         btnCalc.addEventListener('click', calculation)
 
         function calculation() {
+            
             let num1 = parseInt(document.getElementById('num1').value)
             let num2 = parseInt(document.getElementById('num2').value)
+
+            //숫자로 표현할 수 있는지에 대해서는 isNan() 함수이용이 더 편하네요..
+            if(isNaN(num1)){
+                console.log('숫자로 표현할 수 없네요')
+            }
+
             let selectNode = document.getElementById('sel')
             let selectValue = selectNode.options[selectNode.selectedIndex].value;
             

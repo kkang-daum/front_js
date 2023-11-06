@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 1. id 중복선언 -->
+  <input type="text" id="num">국어</input>
+  <div class="result"></div>
+  <input type="text" id="num">영어</input>
+  <div class="result"></div>
+  <input type="text" id="num">수학</input>
+  <div class="result"></div>
+  <button onclick="submit()">등록</button>
+  <div class="finalResult"></div>
+
+  <script>
+    function pf() {
+      let num = parseInt(document.getElementById('num').value);
+      if (num >= 60) {
+        document.write('Pass')
+      } else {
+        document.write('Fail')
+      }
+    }
+
+
+    
+
+    function submit() {
+      pf()
+    }
+  </script>
+</body>
+</html>
