@@ -89,5 +89,37 @@
       e.target.style.visibility = 'hidden'
     })
   </script>
+
+  <h3>캡처링, 버블링</h3>
+  <p>부모 자식으로 중복되어 있는 경우, 부모, 자식 모두 이벤트 처리하는 경우
+    부모부터 이벤트 처리가 되면서 자식의 이벤트 처리가 되어야 하는가 - 캡처링,
+    자식부터 이벤트 처리하고 부모의 이벤트가 처리되어야 하는가 - 버블링
+  </p>
+  <div style="width: 300px; height: 300px; background-color: red;" id="div1">
+    <div style="width: 200px; height: 200px; background-color: blue;" id="div2">
+      <div style="width: 100px; height: 100px; background-color: green;" id="div3"></div>
+    </div>
+  </div>
+  <script>
+    let div1 = document.getElementById('div1')
+    let div2 = document.getElementById('div2')
+    let div3 = document.getElementById('div3')
+
+    //true - 캡처링 : div1 -> div2 -> div3
+    //false - 버블링 : div3 -> div2 -> div1
+    div1.addEventListener('click', function(){
+      console.log('div1 click...')
+    }, false)
+    div2.addEventListener('click', function(){
+      console.log('div2 click...')
+    }, false)
+    div3.addEventListener('click', function(e){
+      console.log('div3 click...')
+      //현재 내가 이벤트 처리되고.. 이 이벤트가 부모 혹은 자식에게 전파되지 않았으면
+      //좋겠다..
+      //발생한 이벤트를 취소시켜 버리면 된다..
+      e.stopPropagation()
+    }, false)
+  </script>
 </body>
 </html>
