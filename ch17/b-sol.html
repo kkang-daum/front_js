@@ -46,7 +46,18 @@
         writePassOrFail(mathResult, math)
         writePassOrFail(engResult, eng)
 
+        //id 로 node 를 획득하겠다면 방법은 여러가지가 있다.. 편한것 사용하면 된다..
+        //워낙 id 로 node 를 많이 획득하다 보니.. getElementById() 라는 함수가 제공된다.
+        //이 함수는 id 로 획득하는 것임으로.. id 를 그냥 쓰면 된다..
+
         let result = document.getElementById('result')
+
+        //아래의 코드로도 획득할 수 잇다.
+        //querySelector() 는 css selector 문법으로 획득하는 함수임으로.. 매개변수에..
+        //id 값을 지칭할때는 #을 추가해 주어야 한다..
+        // let result = document.querySelector('#result')
+
+        //결국 id 로 노드를 획득할때.. 편한것 쓰면 된다..
 
         //평균을 계산.. 
         //국어+수학+영어 / 3
