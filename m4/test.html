@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <section>
+    <h1>리스트 추가하기</h1>
+    <input type="text" id="myText" />
+    <button id="btnAdd">리스트 추가</button>
+    <ul id="myList"></ul>
+</section>
+
+<script>
+    document.getElementById("myText").addEventListener("focus", () => {
+        myText.value = "";
+    });
+
+    document.getElementById("btnAdd").addEventListener("click", function () {
+        let myText = document.getElementById("myText").value;
+        let myLi = document.createElement("li");
+        let liText = document.createTextNode(myText);
+        let btnDel = document.createElement("button");
+        let btnDelText = document.createTextNode("리스트 삭제");
+
+        btnDel.appendChild(btnDelText);
+        myLi.appendChild(liText);
+        myLi.appendChild(btnDel);
+        document.getElementById("myList").appendChild(myLi)
+
+        document.getElementById("myList").insertBefore(myLi, document.getElementById("myList").childNodes[0]);
+
+        let allBtn = document.querySelectorAll("#myList button");
+        allBtn.forEach((item) =>{
+            item.addEventListener('click', function(){
+                // if(this.parentNode.parentNode) { //여기에서 if문이 없으면 콘솔창에 에러가 뜹니다. 
+                    this.parentNode.parentNode.removeChild(this.parentNode);
+                // }
+            })
+        })
+        
+    });
+</script>
+</body>
+</html>

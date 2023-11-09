@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script>
+    window.onload = function () {
+      let button = document.getElementById('button')
+      let table = document.getElementById('result')
+
+      button.addEventListener('click', function () {
+        let url = 'http://openapi.seoul.go.kr:8088/794750456f6a656c36375057595344/json/culturalSpaceInfo/1/5/'
+        let xhr = new XMLHttpRequest()
+
+        xhr.open('get', url, true)
+
+        xhr.onload = function () {
+
+          let result = xhr.responseText
+
+          result = JSON.parse(result)
+
+          // 문제가 있는것같다..
+          let rows = result['culturalSpaceInfo']['row']
+
+          let resultTxt = ''
+          for (let i = 0; i < rows.length; i++) {
+            let name = rows[i]['FAC_NAME']
+            let value = rows[i]['ADDR']
+            let grade = rows[i]['PHONE']
+            let image = rows[i]['MAIN_IMG']
+            let page = rows[i]['HOMEPAGE']
+
+            resultTxt += `
+            <tr>
+              <td>${name}</td>
+              <td>${value}</td>
+              <td>${grade}</td>
+              <td>${image}</td>
+              <td>${page}</td>
+              </tr>
+              `
+          }
+          table.innerHTML = resultTxt
+
+        }
+        // 요청 보낸다
+        xhr.send()
+      })
+
+    }
+
+  </script>
+</head>
+
+<body>
+  <h2>서울시 문화공간 정보</h2>
+  <!-- 서울문화포털 문화공간
+http://openapi.seoul.go.kr:8088/(인증키)/xml/culturalSpaceInfo/1/5/
+794750456f6a656c36375057595344
+http://openapi.seoul.go.kr:8088/794750456f6a656c36375057595344/xml/culturalSpaceInfo/1/5/  -->
+
+  <button id="button">업데이트</button><br />
+
+    <table>
+      <thead>
+        <tr>
+          <th>name</th>
+          <th>수치</th>
+          <th>전화번호</th>
+          <th>이미지</th>
+          <th>홈페이지</th>
+        </tr>
+      </thead>
+      <!-- 여기 밑은 자바스크립트가 하도록하게 -->
+      <tbody id='result'>
+
+
+</body>
+
+</html>
